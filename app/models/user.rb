@@ -2,4 +2,20 @@ class User < ApplicationRecord
   belongs_to :account
   has_many :artworks, dependent: :destroy
   has_many :purchases, dependent: :destroy
+
+  validates :first_name, presence: true, on: :update
+  validates :last_name, presence: true, on: :update
+  # validates :alias, uniqueness: true, on: :update
+  # validates :address, presence: true, if: :artist
+  # validates :picture_artist_banner, presence: true
+  # validates :bank_account, uniqueness: true, presence: true
+  # validates :bio, presence: true
+  # validates :description, presence: true
+
+
+  def artist?
+
+
+
+  end
 end
