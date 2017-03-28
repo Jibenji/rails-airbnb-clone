@@ -4,4 +4,9 @@ class Account < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_one :user, dependent: :destroy
+
+  def artist?
+    user.artist
+  end
+
 end

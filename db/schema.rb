@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170328093452) do
+ActiveRecord::Schema.define(version: 20170328131817) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20170328093452) do
   end
 
   create_table "artworks", force: :cascade do |t|
-    t.string   "type"
+    t.string   "art_category"
     t.string   "description"
     t.integer  "size"
     t.string   "material_description"
