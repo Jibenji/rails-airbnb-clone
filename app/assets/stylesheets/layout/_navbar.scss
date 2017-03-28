@@ -82,18 +82,15 @@
 
 /* Navbar search form */
 .navbar-wagon-search {
-  flex: 0 1 300px;
-  display: flex;
-  justify-content: flex-end;
+  margin-top: 30px;
   padding: 0 10px;
   position: relative;
+
 }
 .navbar-wagon-search-btn {
   line-height: 40px;
-  color: #E6E6E6;
   border: none;
   background: transparent;
-  position: absolute;
   right: 14px;
   top: -2px;
   z-index: 1;
@@ -105,7 +102,7 @@
   font-weight: lighter;
   color: #666666;
   border: 1px solid #E6E6E6;
-  border-radius: 5px;
+  border-radius: 20em;
   padding: 0 10px;
   font-size: 14px;
   outline: none;
