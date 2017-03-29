@@ -12,7 +12,6 @@ class ArtworksController < ApplicationController
   end
 
   def show
-    @users = @artwork.users
   end
 
   def new
@@ -33,9 +32,18 @@ class ArtworksController < ApplicationController
   end
 
   def update
+    @artwork = Artwork.new(artwork_params)
+    @artwork.user = current_account.user
+    if @artwork.save
+      redirect_to artworks_path
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @artwork.destroy
+    redirect_to :back
   end
 
   private
