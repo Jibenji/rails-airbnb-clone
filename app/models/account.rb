@@ -3,10 +3,9 @@ class Account < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_one :user, dependent: :destroy
 
+  has_one :user, dependent: :destroy
   def artist?
     user.artist
   end
-
 end
