@@ -6,7 +6,7 @@
             <div class="card-block">
               <h3 class="card-title"><%= artwork.art_category %></h3>
               <p class="card-text"><%= artwork.size %></p>
-              <p class="card-text"><%= artwork.picture_artwork %> <%= artwork.framed %></p>
+              <p class="card-text"><%= artwork.photo_artwork %> <%= artwork.framed %></p>
               <%= link_to "artwork details", artwork_path(artwork), class: "btn btn-primary"  %>
             </div>
           </div>
@@ -14,7 +14,3 @@
     <% end %>
   </div>
 </section>
-
-
-
-

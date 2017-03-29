@@ -8,7 +8,7 @@ class User < ApplicationRecord
   # validates :last_name, presence: true
   # validates :alias, uniqueness: true, on: :update
   # validates :address, presence: true, if: :artist
-  # validates :picture_artist_banner, presence: true
+  # validates :photo_artist_banner, presence: true
   # validates :bank_account, uniqueness: true, presence: true
   # validates :bio, presence: true
   # validates :description, presence: true

@@ -209,12 +209,9 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass
-
   byebug
-
   carrierwave (~> 0.11.2)
   cloudinary
-
   devise
   figaro
   font-awesome-sass

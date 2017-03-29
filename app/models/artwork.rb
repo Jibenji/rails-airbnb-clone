@@ -5,6 +5,6 @@ class Artwork < ApplicationRecord
   validates :description, presence: true
   validates :size, presence: true
   validates :material_description, presence: true
-  validates :picture_artwork, presence: true
+  validates :photo_artwork, presence: true
   validates :framed, inclusion: { in: [ true, false ] }
 end
