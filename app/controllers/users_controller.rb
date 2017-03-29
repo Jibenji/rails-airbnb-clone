@@ -14,14 +14,9 @@ class UsersController < ApplicationController
   def update
   end
 
-  def destroy
-  end
-
   private
-
-
   def load_user
-    @user = User.find(params[:id].to_i)
+    @user = current_account.user
   end
 
   def user_params
