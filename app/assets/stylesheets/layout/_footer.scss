@@ -1,1 +1,26 @@
 // Your footer style
+.footer {
+  color: #edeff0;
+  height: 20vh;
+  background-size: cover !important;
+}
+
+.social-button {
+  list-style: none;
+}
+
+.social-button li{
+  display: inline;
+  padding: 10px;
+
+}
+
+.social-button i {
+    color: black;
+  }
+
+.social-buttons {
+  display: flex;
+  align-items: center;
+
+}
