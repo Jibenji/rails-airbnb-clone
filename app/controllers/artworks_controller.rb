@@ -5,7 +5,7 @@ class ArtworksController < ApplicationController
   # you don't have to be logged in to see index or show, for the other action you have to be logged in
   skip_before_action :authenticate_account!, only: [:index, :show]
   # you also have to be an artist for the other actions (not index or show)
-  before_action :authenticate_artist!, except: [:index, :show]
+  # before_action :authenticate_artist!, except: [:index, :show]
 
   def index
     @artworks = Artwork.all
@@ -49,7 +49,7 @@ class ArtworksController < ApplicationController
   private
 
   def artwork_params
-    params.require(:artwork).permit(:art_category, :description, :size, :material_description, :picture_artwork, :framed)
+    params.require(:artwork).permit(:art_category, :description, :size, :material_description, :photo_artwork, :framed)
   end
 
    def load_artwork
