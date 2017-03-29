@@ -1,0 +1,52 @@
+.card {
+  height: 250px;
+  border-radius: 3px;
+  border: 2px solid #ccc;
+  color: black;
+  position: relative;
+  margin:10px 0 10px 0;
+  padding: 10px;
+}
+.card-user {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+
+}
+.card-description {
+ text-align: center;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ height: 100%;
+}
+
+.card-description h2 {
+  font-size: 24px;
+}
+.card-description a {
+  font-size: 13px;
+  color: black;
+}
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index:2;
+  background: black;
+  opacity: 0;
+}
+.card-link:hover{
+  opacity: 0.1;
+}
+
+.card-padding {
+  padding-bottom: 30px;
+}
+
+.card-group {
+  padding-top: 50px;
+}
