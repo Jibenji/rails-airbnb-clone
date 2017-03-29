@@ -3,6 +3,9 @@
   color: #edeff0;
   height: 20vh;
   background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .social-button {
@@ -16,11 +19,29 @@
 }
 
 .social-button i {
-    color: black;
-  }
+  color: black;
+}
 
-.social-buttons {
-  display: flex;
-  align-items: center;
+.social-button i:hover {
+  color: #c9c9c9;
+}
 
+.footer-text {
+  padding-right: 30px;
+  list-style: none;
+}
+
+.footer-text li {
+  display: inline;
+  padding: 10px;
+  color: black;
+}
+
+.footer-text a {
+color: black;
+}
+
+.footer-text a:hover {
+color: #c9c9c9;
+text-decoration: none;
 }
