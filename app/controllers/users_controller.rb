@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :load_user, only: [:show, :edit, :destroy]
+  before_action :load_user, only: [:show, :edit, :update, :destroy]
 
   def index
     @users = User.all
@@ -12,6 +12,9 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user.update_attributes(user_params)
+    #@user.save
+    redirect_to artworks_path
   end
 
   private
@@ -20,6 +23,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:bio, :description, :alias, :picture_avatar, :picture_artist_banner, :phone, :address, :city, :bank_account)
+    params.require(:user).permit(:first_name, :last_name, :bio, :description, :alias, :picture_avatar, :picture_artist_banner, :phone, :address, :city, :bank_account)
   end
 end

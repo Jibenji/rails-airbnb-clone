@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :purchases, dependent: :destroy
 
   validates :first_name, presence: true, on: :update
-  validates :last_name, presence: true, on: :update
+  # validates :last_name, presence: true
   # validates :alias, uniqueness: true, on: :update
   # validates :address, presence: true, if: :artist
   # validates :picture_artist_banner, presence: true
