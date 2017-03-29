@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20170328143931) do
   end
 
   create_table "artworks", force: :cascade do |t|
-    t.string   "type"
+    t.string   "art_category"
     t.string   "description"
     t.integer  "size"
     t.string   "material_description"

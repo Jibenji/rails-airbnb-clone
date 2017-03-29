@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :artworks
+
   devise_for :accounts, controllers: { registrations: "registrations" }
 
   resources :users, only: [:edit, :update, :show], path: :profile

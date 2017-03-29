@@ -5,5 +5,7 @@ class Account < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :user, dependent: :destroy
-  # accepts_nested_attributes_for :user
+  def artist?
+    user.artist
+  end
 end

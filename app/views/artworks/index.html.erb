@@ -1,0 +1,16 @@
+<%= account_signed_in? %>
+<%= "artist?" %>
+<%= current_account.user.artist %>
+
+<% @artworks.each do |artwork| %>
+<p>
+  <%= artwork.user.first_name %>
+  <%= artwork.user.last_name %>
+  <%= artwork.art_category %>
+  <%= artwork.size %>
+  <%= artwork.material_description %>
+  <%= artwork.picture_artwork %>
+  <%= artwork.framed %>
+  <%= link_to "artwork details", artwork_path(artwork)  %>
+</p>
+<% end %>
