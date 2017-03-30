@@ -49,7 +49,7 @@ class ArtworksController < ApplicationController
   private
 
   def artwork_params
-    params.require(:artwork).permit(:art_category, :description, :size, :material_description, :photo_artwork, :photo_cache, :framed)
+    params.require(:artwork).permit(:art_category, :description, :size, :material_description, :photo_artwork, :photo_cache, :framed, :price)
   end
 
    def load_artwork

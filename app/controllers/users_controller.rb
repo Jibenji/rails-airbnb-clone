@@ -27,3 +27,4 @@ class UsersController < ApplicationController
     params.require(:user).permit(:first_name, :last_name, :artist, :bio, :description, :alias, :photo_artists_banner, :phone, :address, :city, :bank_account, :photo_artists_banner_cache, :photo_avatar, :photo_avatar_cache)
   end
 end
+
