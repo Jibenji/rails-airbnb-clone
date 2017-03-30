@@ -1,5 +1,5 @@
 class Artwork < ApplicationRecord
-  mount_uploader :photo, PhotoUploader
+  mount_uploader :photo_artwork, PhotoUploader
   belongs_to :user
   validates :art_category, presence: true
   validates :description, presence: true
