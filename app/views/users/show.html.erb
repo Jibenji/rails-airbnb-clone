@@ -1,16 +1,23 @@
-<div class="banner" style="background-image: url(<%= image_url 'mourin.jpg'%>);">
+<div class="banner-profile" style="background-image: url(<%= image_url cl_image_path @user.photo_artists_banner%>);">
+</div>
+
+<div class="profile-container">
+  <div class="artist-info">
+    <div class="artist-name-description">
+      <div id="artist-name">
+        <h1><%= @user.first_name + " " + @user.last_name %></h1>
+      </div>
+      <%= @user.description %>
+    </div>
+  </div>
+  <div class="artist-avatar">
+  <img class="avatar-large" src="<%= cl_image_path @user.photo_avatar, crop: :fill %>">
+  </div>
 </div>
 
 
 
 
-
-
-<h1><%= @user.first_name %></h1>
-
-<% @artworks.each do |artwork| %>
-  <%= artwork.art_category %>
-<% end %>
 
 
 <!-- some nice cards to be added here but the core is working -->
