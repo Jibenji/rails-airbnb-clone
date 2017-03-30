@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  # include PgSearch
   mount_uploader :photo_avatar, PhotoUploader
   mount_uploader :photo_artists_banner, PhotoUploader
   belongs_to :account
@@ -16,8 +17,10 @@ class User < ApplicationRecord
 
 
   def artist?
-
-
-
   end
+
+  def self.search(search)
+  where("first_name ILIKE ?", "%#{search}%")
+  end
+
 end

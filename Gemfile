@@ -19,6 +19,8 @@ gem 'autoprefixer-rails'
 gem 'cloudinary'
 gem 'carrierwave', '~> 0.11.2'
 gem "foreman"
+gem 'pg_search'
+
 
 
 group :development, :test do
