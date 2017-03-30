@@ -1,13 +1,19 @@
-<%= simple_form_for(@artwork) do |f| %>
-  <%= f.select :art_category, ['Photography', 'Painting', 'Drawing', 'Sculpture', 'Mixed Media']%>
-  <%= f.input :description %>
-  <%= f.input :size %>
-  <%= f.input :material_description %>
-  <%= f.input :photo_artwork %>
-  <%= f.input :photo_artwork_cache, as: :hidden %>
-  <%= f.input :framed %>
-  <%= f.input :price %>
-  <%= f.submit %>
-<% end %>
+<div class="form-container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <%= simple_form_for(@artwork) do |f| %>
+      <%= f.select :art_category, ['Photography', 'Painting', 'Drawing', 'Sculpture', 'Mixed Media']%>
+      <%= f.input :description %>
+      <%= f.input :size %>
+      <%= f.input :material_description %>
+      <%= f.input :photo_artwork, required: true %>
+      <%= f.input :photo_artwork_cache, as: :hidden %>
+      <%= f.input :framed %>
+      <%= f.input :price %>
+      <%= f.submit, class: "white-button btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>
 
 

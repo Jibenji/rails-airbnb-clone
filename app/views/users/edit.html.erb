@@ -3,9 +3,9 @@
 <div class="form-inputs">
   <%= f.input :first_name, required: true, autofocus: true %>
   <%= f.input :last_name %>
-  <%= f.input :photo_avatar %>
+  <%= f.input :photo_avatar, required: true %>
   <%= f.input :photo_avatar_cache, as: :hidden %>
-  <%= f.input :photo_artists_banner %>
+  <%= f.input :photo_artists_banner, required: true %>
   <%= f.input :photo_artists_banner_cache, as: :hidden %>
   <%= f.input :phone %>
   <%= f.input :address %>
