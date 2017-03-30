@@ -2,17 +2,46 @@
 </div>
 
 <div class="profile-container">
-  <div class="artist-info">
-    <div class="artist-name-description">
-      <div id="artist-name">
-        <h1><%= @user.first_name + " " + @user.last_name %></h1>
+  <div class="profile-basic-info">
+    <div class="artist-info">
+      <div class="artist-name-description">
+        <div id="artist-name">
+          <h1><%= @user.first_name + " " + @user.last_name %></h1>
+        </div>
+        <h4><%= @user.description %></h4>
       </div>
-      <%= @user.description %>
+    </div>
+    <div class="artist-avatar">
+      <img class="avatar-large" src="<%= cl_image_path @user.photo_avatar, crop: :fill %>">
     </div>
   </div>
-  <div class="artist-avatar">
-  <img class="avatar-large" src="<%= cl_image_path @user.photo_avatar, crop: :fill %>">
+  <div class="artist-bio">
+    <%= @user.bio %>
   </div>
+
+
+  <section class="container card-group">
+  <div class="row">
+    <% @user.artworks.each do |artwork| %>
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-block">
+        <%= link_to profile_path(artwork) do %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path artwork.photo_artwork, height: 300, width: 400,crop: :fill %>')">
+            <!-- <h3 class="card-title"><%= user.first_name + " " + user.last_name %></h3> -->
+          </div>
+        </div>
+      </div>
+      </div>
+      <% end %>
+      <% end %>
+    </div>
+  </section>
+
+
+
+
+
 </div>
 
 
