@@ -1,5 +1,5 @@
 <%= simple_form_for(@artwork) do |f| %>
-  <%= f.input :art_category %>
+  <%= f.select :art_category, ['Photography', 'Painting', 'Drawing', 'Sculpture', 'Mixed Media']%>
   <%= f.input :description %>
   <%= f.input :size %>
   <%= f.input :material_description %>

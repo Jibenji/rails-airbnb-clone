@@ -9,6 +9,7 @@ class ArtworksController < ApplicationController
 
   def index
     @artworks = Artwork.all
+    @artworks_by_category = Artwork.where(art_category: params[:format])
   end
 
   def show
@@ -52,7 +53,7 @@ class ArtworksController < ApplicationController
     params.require(:artwork).permit(:art_category, :description, :size, :material_description, :photo_artwork, :photo_cache, :framed, :price)
   end
 
-   def load_artwork
+  def load_artwork
     @artwork = Artwork.find(params[:id])
   end
 
