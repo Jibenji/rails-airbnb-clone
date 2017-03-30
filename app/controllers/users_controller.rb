@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @artworks = current_account.user.artworks
   end
 
   def edit

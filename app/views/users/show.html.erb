@@ -1,1 +1,8 @@
 <h1><%= @user.first_name %></h1>
+
+<% @artworks.each do |artwork| %>
+  <%= artwork.art_category %>
+<% end %>
+
+
+<!-- some nice cards to be added here but the core is working -->
