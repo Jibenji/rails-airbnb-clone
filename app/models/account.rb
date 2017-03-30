@@ -9,3 +9,4 @@ class Account < ApplicationRecord
     user.artist
   end
 end
+
