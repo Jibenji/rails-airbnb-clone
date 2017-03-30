@@ -7,5 +7,6 @@ class Artwork < ApplicationRecord
   validates :material_description, presence: true
   validates :photo_artwork, presence: true
   validates :framed, inclusion: { in: [ true, false ] }
-  validates :price, presence: true , numericality: { only_integer: true }
+  validates :price, presence: true
+  # validates :price, numericality: { only_integer: true }
 end

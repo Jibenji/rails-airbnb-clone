@@ -2,9 +2,10 @@
   <div class="banner-content">
     <h1>Find your work of art</h1>
     <!-- <a class="btn btn-primary btn-lg">GET IT</a> -->
-  <% ['Photography', 'Painting', 'Drawing', 'Sculpture', 'Mixed Media', 'Browse All'].each do |category| %>
-    <%= link_to category, artworks_path, class: "white-button btn" %>
+  <% ['Photography', 'Painting', 'Drawing', 'Sculpture', 'Mixed Media', 'Others'].each do |category| %>
+    <%= link_to category, artworks_path(category: category), class: "white-button btn" %>
   <% end %>
+  <%= link_to 'Browse All', artworks_path, class: "white-button btn" %>
      <form action="" class="navbar-wagon-search">
       <input type="text" class="navbar-wagon-search-input" placeholder="Search for artist">
       <button type="submit" class="navbar-wagon-search-btn">
