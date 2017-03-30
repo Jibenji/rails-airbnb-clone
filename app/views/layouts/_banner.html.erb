@@ -2,12 +2,9 @@
   <div class="banner-content">
     <h1>Find your work of art</h1>
     <!-- <a class="btn btn-primary btn-lg">GET IT</a> -->
-    <%= link_to 'Photography', new_account_registration_path, class: "white-button btn" %>
-    <%= link_to 'Painting', new_account_registration_path, class: "white-button btn" %>
-    <%= link_to 'Drawing', new_account_registration_path, class: "white-button btn" %>
-    <%= link_to 'Sculpture', new_account_registration_path, class: "white-button btn" %>
-    <%= link_to 'Mixed Media', new_account_registration_path, class: "white-button btn" %>
-     <%= link_to 'Browse All', new_account_registration_path, class: "white-button btn" %>
+  <% ['Photography', 'Painting', 'Drawing', 'Sculpture', 'Mixed Media', 'Browse All'].each do |category| %>
+    <%= link_to category, artworks_path, class: "white-button btn" %>
+  <% end %>
      <form action="" class="navbar-wagon-search">
       <input type="text" class="navbar-wagon-search-input" placeholder="Search for artist">
       <button type="submit" class="navbar-wagon-search-btn">
@@ -16,3 +13,5 @@
     </form>
   </div>
 </div>
+
+
