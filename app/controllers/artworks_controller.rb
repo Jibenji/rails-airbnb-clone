@@ -8,8 +8,11 @@ class ArtworksController < ApplicationController
   # before_action :authenticate_artist!, except: [:index, :show]
 
   def index
-    @artworks = Artwork.all
-    @artworks_by_category = Artwork.where(art_category: params[:format])
+    if params[:category]
+      @artworks_by_category = Artwork.where(art_category: params[:category])
+    else
+      @artworks_by_category = Artwork.all
+    end
   end
 
   def show
