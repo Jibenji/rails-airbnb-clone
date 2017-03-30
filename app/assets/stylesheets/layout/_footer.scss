@@ -1,7 +1,7 @@
 // Your footer style
 .footer {
   color: #edeff0;
-  height: 20vh;
+  height: 35vh;
   background-size: cover !important;
   display: flex;
   align-items: center;
@@ -26,10 +26,13 @@
   color: #c9c9c9;
 }
 
+.social-buttons {
+  padding-left: 100px;
+}
 
 
 .footer-text {
-  padding-right: 30px;
+  padding-right: 100px;
   list-style: none;
 }
 
