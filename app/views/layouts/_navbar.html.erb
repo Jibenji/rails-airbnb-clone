@@ -2,48 +2,49 @@
 
 
   <div class="navbar-wagon-item">
-  <% if account_signed_in? %>
+    <% if account_signed_in? %>
     <div class="dropdown">
-      <img src="http://placehold.it/50x50" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+    <img src="<%= cl_image_path current_account.user.photo_avatar, crop: :fill %>" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
       <ul class="dropdown-menu dropdown-menu-left navbar-wagon-dropdown-menu">
-        <li><%=  %></li>
         <li><%= link_to "Edit Profile", editprofile_path %></li>
         <li><%= link_to "Add Artwork", new_artwork_path %></li>
         <li><%= link_to "See your Artworks", profile_path %></li>
       </ul>
     </div>
-    <% end %>
+   <% end %>
   </div>
 
 
-  <!-- Logo -->
-  <div id="position-logo">
-    <h1> <%= link_to "ARTSTARTS", root_path, class: "text-logo" %>  </h1>
-  </div>
 
- <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
-    <!-- Button (call-to-action) -->
-    <% if account_signed_in? %>
-     <%= link_to "Log out", destroy_account_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-button btn"  %>
-    <% else %>
-      <%= link_to 'Sign up', new_account_registration_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
-    <%= link_to 'Login',  new_account_session_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
-    <% end %>
-  </div>
 
-  <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right right-navbar-wagon-dropdown-menu">
-        <% if account_signed_in? %>
-          <li><%= link_to "Log out", destroy_account_session_path, method: :delete %></li>
-          <% else %>
-          <li> <%= link_to 'Sign up', new_account_registration_path %> </li>
-          <li> <%= link_to 'Login',  new_account_session_path  %> </li>
-          <% end %>
-      </ul>
-    </div>
+<!-- Logo -->
+<div id="position-logo">
+  <h1> <%= link_to "ARTSTARTS", root_path, class: "text-logo" %>  </h1>
+</div>
+
+<!-- Right Navigation -->
+<div class="navbar-wagon-right hidden-xs hidden-sm">
+  <!-- Button (call-to-action) -->
+  <% if account_signed_in? %>
+  <%= link_to "Log out", destroy_account_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-button btn"  %>
+  <% else %>
+  <%= link_to 'Sign up', new_account_registration_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+  <%= link_to 'Login',  new_account_session_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+  <% end %>
+</div>
+
+<div class="navbar-wagon-item hidden-md hidden-lg">
+  <div class="dropdown">
+    <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+    <ul class="dropdown-menu dropdown-menu-right right-navbar-wagon-dropdown-menu">
+      <% if account_signed_in? %>
+      <li><%= link_to "Log out", destroy_account_session_path, method: :delete %></li>
+      <% else %>
+      <li> <%= link_to 'Sign up', new_account_registration_path %> </li>
+      <li> <%= link_to 'Login',  new_account_session_path  %> </li>
+      <% end %>
+    </ul>
   </div>
+</div>
 </div>
 
