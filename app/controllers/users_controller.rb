@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :load_user, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_account!, only: [:index, :show]
 
   def index
     if params[:search]
@@ -10,7 +11,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @artworks = current_account.user.artworks
+    @artworks = @user.artworks
   end
 
   def edit
@@ -20,7 +21,7 @@ class UsersController < ApplicationController
     @user.update_attributes(user_params)
     if @user.valid?
       @user.save
-      redirect_to root_path
+      redirect_to profile_path(@user)
     else
       render :edit
     end
@@ -28,7 +29,11 @@ class UsersController < ApplicationController
 
   private
   def load_user
-    @user = current_account.user
+    if params[:id]
+      @user = User.find(params[:id])
+    else
+      @user = current_account.user
+    end
   end
 
   def user_params
