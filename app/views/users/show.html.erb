@@ -28,8 +28,12 @@
         <div class="card">
           <div class="card-block">
             <%= link_to artwork_path(artwork) do %>
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path artwork.photo_artwork, height: 300, width: 400,crop: :fill %>')">
+            <div class="card" style="background-image: url('<%= cl_image_path artwork.photo_artwork, height: 300, width: 400,crop: :fill %>')">
+            <div class="name-card">
+              <%= artwork.description %>
             </div>
+            </div>
+
           </div>
         </div>
       </div>
