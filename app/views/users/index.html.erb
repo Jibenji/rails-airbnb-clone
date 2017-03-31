@@ -1,20 +1,21 @@
 <section class="container card-group">
-  <div class="row">
-    <% @users.each do |user| %>
+    <div class="row">
+      <% @users.each do |user| %>
+    <% if user.artist == true %>
       <div class="col-sm-4">
         <div class="card">
           <div class="card-block">
-            <% if user.photo_avatar.present? %>
-              <%= link_to profile_path(user) do %>
-                <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path user.photo_avatar, height: 300, width: 400,crop: :fill %>')">
-                </div>
-              <% end %>
-              <h3 class="card-title"><%= user.first_name + " " + user.last_name %></h3>
-            <% end %>
+            <%= link_to profile_path(user) do %>
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path user.photo_artists_banner, height: 300, width: 400,crop: :fill %>')">
+            <div class="name-card">
+              <%= user.first_name + " " + user.last_name %>
+            </div>
+            </div>
           </div>
         </div>
       </div>
-    <% end %>
-  </div>
-</section>
-
+      <% end %>
+      <% end %>
+      <% end %>
+    </div>
+  </section>

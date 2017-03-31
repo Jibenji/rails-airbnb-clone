@@ -6,13 +6,14 @@
     <%= link_to category, artworks_path(category: category), class: "white-button btn" %>
     <% end %>
     <%= link_to 'Browse All', artworks_path, class: "white-button btn" %>
-    <%= form_tag(users_path, :method => "get", id: "search-form", class: "navbar-wagon-search") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search for artist", class: "navbar-wagon-search-input" %>
-    <%= button_tag(type: 'submit', class: "navbar-wagon-search-btn") do %>
-    <i class="fa fa-search"></i>
-    <% end %>
-    <% end %>
-
+    <div class="search-field-banner">
+      <%= form_tag(users_path, :method => "get", id: "search-form", class: "navbar-wagon-search") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search for artist", class: "navbar-wagon-search-input" %>
+      <%= button_tag(type: 'submit', class: "navbar-wagon-search-btn") do %>
+      <i class="fa fa-search"></i>
+      <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
 
