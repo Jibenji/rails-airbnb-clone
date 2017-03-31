@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     if params[:search]
       @users = User.search(params[:search]).order("created_at DESC")
     else
-      @users = User.all.order("created_at DESC")
+      @users = User.where(artist: true)
     end
   end
 
@@ -18,8 +18,7 @@ class UsersController < ApplicationController
 
   def update
     @user.update_attributes(user_params)
-    #@user.save
-    redirect_to artworks_path
+    redirect_to root_path
   end
 
   private
