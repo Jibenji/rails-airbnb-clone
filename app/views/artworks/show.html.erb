@@ -7,7 +7,11 @@
         <p class="card-text"><%= @artwork.price %></p>
         <p class="card-text"><%= @artwork.photo_artwork %></p>
         <p><%= @artwork.framed %></p>
-        <%= link_to "Buy artwork", artwork_path(@artwork), class: "btn btn-primary"  %>
+        <% if @artwork.sold == true %>
+          <p>Sold</p>
+        <% else %>
+          <%= link_to "Buy artwork", artwork_sold_path(id: @artwork.id), method: :patch , class: "btn btn-primary"  %>
+        <% end %>
       </div>
     </div>
   </div>

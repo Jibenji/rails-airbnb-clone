@@ -1,6 +1,6 @@
 class ArtworksController < ApplicationController
 
-  before_action :load_artwork, only: [:show, :edit, :update, :destroy]
+  before_action :load_artwork, only: [:show, :edit, :update, :destroy, :sold]
 
   # you don't have to be logged in to see index or show, for the other action you have to be logged in
   skip_before_action :authenticate_account!, only: [:index, :show]
@@ -13,6 +13,12 @@ class ArtworksController < ApplicationController
     else
       @artworks_by_category = Artwork.all
     end
+  end
+
+  def sold
+    @artwork.sold = true
+    @artwork.save
+    redirect_to root_path
   end
 
   def show
