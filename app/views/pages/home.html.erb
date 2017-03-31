@@ -1,20 +1,26 @@
 <%= render 'layouts/banner' %>
 
-<section class="container card-group">
-  <div class="row">
-    <% @artworks.each do |artwork| %>
+<div class=text-center> <%= link_to "List All Artists", users_path, class: "black-button btn" %>
+</div>
+ <section class="container card-group">
+    <div class="row">
+      <% @users.each do |user| %>
+    <% if user.artist == true %>
       <div class="col-sm-4">
-          <div class="card">
-            <div class="card-block">
-              <h3 class="card-title"><%= artwork.art_category %></h3>
-              <p class="card-text"><%= artwork.size %></p>
-              <p class="card-text"><%= artwork.photo_artwork %> <%= artwork.framed %></p>
-              <%= link_to "artwork details", artwork_path(artwork), class: "btn btn-primary"  %>
+        <div class="card">
+          <div class="card-block">
+            <%= link_to profile_path(user) do %>
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path user.photo_artists_banner, height: 300, width: 400,crop: :fill %>')">
+            <div class="name-card">
+              <%= user.first_name + " " + user.last_name %>
+            </div>
+
             </div>
           </div>
+        </div>
       </div>
-    <% end %>
-  </div>
-</section>
-
-
+      <% end %>
+      <% end %>
+      <% end %>
+    </div>
+  </section>
