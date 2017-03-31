@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
-  get 'purchases/index'
 
-  get 'purchases/show'
-
-  get 'purchases/create'
-
-  get 'purchases/new'
   get 'pages/thankyou', to: "pages#thankyou"
 
   resources :artworks
