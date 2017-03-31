@@ -14,11 +14,18 @@
       <div class="col-sm-4">
         <div class="card">
           <div class="card-block">
-            <%= purchase.artwork.title %>
-            <br>
-            <%= purchase.artwork.description %>
-            <br>
-            <%= purchase.artwork.price %>
+            <div class="purchase-title">
+              Title: <%= purchase.artwork.title %>
+            </div>
+            <div class="purchase-items">
+              Description: <%= purchase.artwork.description %>
+            </div>
+            <div class="purchase-items">
+              Price: € <%= purchase.artwork.price %>
+            </div>
+            <div class="purchase-items">
+              Price: <%= purchase.artwork.price %>
+            </div>
           </div>
         </div>
       </div>
