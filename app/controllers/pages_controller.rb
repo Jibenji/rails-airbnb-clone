@@ -6,4 +6,9 @@ class PagesController < ApplicationController
     @artworks = Artwork.all
   end
 
+  def thankyou
+
+  end
+
 end
+

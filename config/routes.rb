@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'purchases/create'
 
   get 'purchases/new'
+  get 'pages/thankyou', to: "pages#thankyou"
 
   resources :artworks
 
@@ -16,6 +17,7 @@ Rails.application.routes.draw do
     resources :purchases, only: [:index, :create, :new]
   end
   resources :users, only: [:index], path: :artists
+
 
   get 'editprofile', to: 'users#edit'
   patch 'editprofile', to: 'users#update'
