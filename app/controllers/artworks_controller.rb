@@ -18,6 +18,14 @@ class ArtworksController < ApplicationController
   def sold
     @artwork.sold = true
     @artwork.save
+    create_purchase(@artwork)
+  end
+
+  def create_purchase(artwork)
+    @purchase = Purchase.new
+    @purchase.user = artwork.user
+    @purchase.artwork = artwork
+    @purchase.save
     redirect_to root_path
   end
 
