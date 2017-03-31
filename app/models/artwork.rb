@@ -9,9 +9,4 @@ class Artwork < ApplicationRecord
   validates :framed, inclusion: { in: [ true, false ] }
   validates :price, presence: true
   # validates :price, numericality: { only_integer: true }
-
-  def sold
-    self.sold = true
-    return self
-  end
 end
