@@ -1,16 +1,26 @@
+<div class="container-artwork">
+  <div class="artwork-photo" style="background-image: url('<%= cl_image_path @artwork.photo_artwork, height: 400, width: 600, crop: :fill %>')">
+  </div>
+</div>
+
+
 <div class="container">
   <div class="row">
     <div class="col-xs-6 col-xs-offset-3">
       <div class="card-block">
-        <h3 class="card-title"><%= @artwork.art_category %></h3>
+        <h2 class="card-title"><%= @artwork.user.first_name + " " + @artwork.user.last_name %></h2>
+        <p class="card-text"><%= @artwork.description %></p>
         <p class="card-text"><%= @artwork.size %></p>
-        <p class="card-text"><%= @artwork.price %></p>
-        <p class="card-text"><%= @artwork.photo_artwork %></p>
-        <p><%= @artwork.framed %></p>
-        <% if @artwork.sold == true %>
-          <p>Sold</p>
+        <p class="card-text">€ <%= @artwork.price %></p>
+        <% if @artwork.framed %>
+        <p>The artwork is framed.</p>
         <% else %>
-          <%= link_to "Buy artwork", artwork_sold_path(id: @artwork.id), method: :patch , class: "btn btn-primary"  %>
+        <p>The artwork is not framed.</p>
+        <% end %>
+        <% if @artwork.sold == true %>
+        <h4>Sold</h4>
+        <% else %>
+        <%= link_to "Buy artwork", artwork_sold_path(id: @artwork.id), method: :patch , class: "btn black-button"  %>
         <% end %>
       </div>
     </div>
