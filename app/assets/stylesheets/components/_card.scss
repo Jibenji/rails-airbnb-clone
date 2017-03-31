@@ -51,5 +51,20 @@
 }
 
 .card-group {
+  margin-top: 50px ;
+  margin-bottom: 50px;
   padding-top: 50px;
+}
+
+.name-card {
+  height: 250px;
+  width: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.name-card a:hover {
+  text-decoration: none;
 }
