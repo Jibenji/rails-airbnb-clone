@@ -1,22 +1,23 @@
-<section class="container card-group">
-  <div class="row">
-    <% @artworks_by_category.each do |artwork| %>
+
+
+ <section class="container card-group">
+    <div class="row">
+     <% @artworks_by_category.each do |artwork| %>
       <div class="col-sm-4">
-          <div class="card">
-            <div class="card-block">
+        <div class="card">
+          <div class="card-block">
             <%= link_to artwork_path(artwork) do %>
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path artwork.photo_artwork, height: 300, width: 400, crop: :fill %>')">
-              <h3 class="card-title"><%= artwork.art_category %></h3>
-              <p class="card-text"><%= artwork.size %></p>
-              <p class="card-text"> <%= artwork.framed %></p>
-              <p class="card-text"> <%= artwork.price %></p>
-              <%= link_to "artwork details", artwork_path(artwork), class: "btn btn-primary"  %>
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path artwork.photo_artwork, height: 300, width: 400,crop: :fill %>')">
+            <div class="name-card text-center">
+              <%= artwork.user.first_name + " " + artwork.user.last_name %></br>
+              <%= artwork.description %>
+            </div>
             </div>
           </div>
+        </div>
       </div>
-      </div>
-      <% end %>
-    <% end %>
-  </div>
-</section>
 
+      <% end %>
+      <% end %>
+    </div>
+  </section>
