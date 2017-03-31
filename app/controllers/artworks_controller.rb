@@ -23,7 +23,7 @@ class ArtworksController < ApplicationController
 
   def create_purchase(artwork)
     @purchase = Purchase.new
-    @purchase.user = artwork.user
+    @purchase.user = current_account.user
     @purchase.artwork = artwork
     @purchase.save
     redirect_to pages_thankyou_path
