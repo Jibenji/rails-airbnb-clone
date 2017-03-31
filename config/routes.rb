@@ -1,10 +1,20 @@
 Rails.application.routes.draw do
+  get 'purchases/index'
+
+  get 'purchases/show'
+
+  get 'purchases/create'
+
+  get 'purchases/new'
+
   resources :artworks
 
   devise_for :accounts, controllers: { registrations: "registrations" }
 
   resources :users, only: [:edit, :update], path: :editprofile
-  resources :users, only: [:show], path: :profile
+  resources :users, only: [:show], path: :profile do
+    resources :purchases, only: [:index, :create, :new]
+  end
   resources :users, only: [:index], path: :artists
 
   get 'editprofile', to: 'users#edit'
@@ -17,6 +27,8 @@ Rails.application.routes.draw do
   resources :artworks, only: [:sold], path: :artwork_sold
 
   patch 'artwork/sold', to: 'artworks#sold'
+
+
 
 
   root to: 'pages#home'
