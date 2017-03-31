@@ -26,7 +26,7 @@ class ArtworksController < ApplicationController
     @purchase.user = artwork.user
     @purchase.artwork = artwork
     @purchase.save
-    redirect_to root_path
+    redirect_to pages_thankyou_path
   end
 
   def show

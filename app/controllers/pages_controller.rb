@@ -6,4 +6,9 @@ class PagesController < ApplicationController
     @users = User.all.where(artist: true)
   end
 
+  def thankyou
+
+  end
+
 end
+
